@@ -1,0 +1,8 @@
+{
+  "licenses": [
+    "MIT"
+  ],
+  "exclude": [
+    "src/1/hello.py"
+  ]
+}
