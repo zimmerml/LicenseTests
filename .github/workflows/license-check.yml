@@ -15,6 +15,11 @@ jobs:
         uses: actions/checkout@v3
         with:
             repository: OpenTOSCA/license-engine
+      - name: checkout-files
+        uses: makers99/checkout-files@v1.1.0
+        with:
+          files: .ignorefiles
+          branch: $GITHUB_REF_NAME
       - name: Set up JDK 8
         uses: actions/setup-java@v3
         with:
