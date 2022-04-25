@@ -18,7 +18,7 @@ jobs:
       - name: Download a file
         uses: carlosperate/download-file-action@v1
         with:
-          file-url: 'ttps://raw.githubusercontent.com/zimmerml/LicenseTests/4/.ignorefiles'
+          file-url: 'https://raw.githubusercontent.com/zimmerml/LicenseTests/4/.ignorefiles'
       - name: Check the file is there
         run: ls -l .ignorefiles
       - name: download ignore file
