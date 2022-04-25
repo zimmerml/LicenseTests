@@ -1,7 +1,7 @@
 name: License Check
 on: [push, pull_request]
 jobs:
-  Start-Checking:
+  License-Check:
     runs-on: ubuntu-latest
     
     services:
@@ -30,9 +30,7 @@ jobs:
         uses: carlosperate/download-file-action@v1
         with:
           file-url: 'https://raw.githubusercontent.com/zimmerml/LicenseTests/4/.ignorefiles'
-      - name: Check the file is there
-        run: ls -l .ignorefiles
-        
+
       - name: Start License Engine
         run: java -jar target/licenseengine-0.0.1-SNAPSHOT.jar --repo=$GITHUB_REPOSITORY --branch=$GITHUB_REF_NAME
 
