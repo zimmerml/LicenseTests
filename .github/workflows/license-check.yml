@@ -15,11 +15,8 @@ jobs:
         uses: actions/checkout@v3
         with:
             repository: OpenTOSCA/license-engine
-      - name: checkout-files
-        uses: makers99/checkout-files@v1.1.0
-        with:
-          files: .ignorefiles
-          branch: $GITHUB_REF_NAME
+      - name: download ignore file
+        run: curl 'https://raw.githubusercontent.com/zimmerml/LicenseTests/4/.ignorefiles' > .ignorefiles
       - name: Set up JDK 8
         uses: actions/setup-java@v3
         with:
