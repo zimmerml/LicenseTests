@@ -31,8 +31,6 @@ jobs:
         with:
           file-url: 'https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/.ignorefiles'
           file-name: '.ignorefiles'
-      - name: Check the file is there
-        run: ls -l .ignorefiles
 
       - name: Start License Engine
         run: java -jar target/licenseengine-0.0.1-SNAPSHOT.jar --repo=$GITHUB_REPOSITORY --branch=$GITHUB_REF_NAME
