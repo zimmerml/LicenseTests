@@ -30,6 +30,7 @@ jobs:
         uses: carlosperate/download-file-action@v1
         with:
           file-url: 'https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/.ignorefiles'
+          file-name: '.ignorefiles'
       - name: Check the file is there
         run: ls -l .ignorefiles
 
