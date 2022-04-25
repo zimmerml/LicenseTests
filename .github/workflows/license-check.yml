@@ -26,6 +26,7 @@ jobs:
         run: mvn package
         
       - name: Download a file
+        continue-on-error: true
         uses: carlosperate/download-file-action@v1
         with:
           file-url: 'https://raw.githubusercontent.com/zimmerml/LicenseTests/4/.ignorefiles'
@@ -33,6 +34,5 @@ jobs:
         run: ls -l .ignorefiles
         
       - name: Start License Engine
-        if: always()
         run: java -jar target/licenseengine-0.0.1-SNAPSHOT.jar --repo=$GITHUB_REPOSITORY --branch=$GITHUB_REF_NAME
 
